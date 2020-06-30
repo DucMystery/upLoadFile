@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thylemeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<h1>List Of Image</h1>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Image</th>
+    </tr>
+    <th:block th:each="image:${images}">
+        <tr>
+            <td th:text="${image.getId()}"></td>
+            <td>
+                <img th:src="'/fileimg/' + ${image.getName()}" height="130" width="130"/>
+            </td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
